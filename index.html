@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使いづらいUI</title>
+    <link rel="stylesheet" href="./asset/css/styles.css" />
+    <script src="/asset/js/p5.min.js"></script>
+    <script src="/asset/js/p5buttons.js"></script>
+    <!-- https://github.com/koerismo/p5.buttons#Quickstart -->
+  </head>
+  <body>
+    <div id="contents">
+      <div class="page page-active" id="page-1">
+        <section id="date">
+          <div class="slider-section" id="slider1">
+            <p class="section-title">ご予約日</p>
+            <div id="slider1-pos"></div>
+            <p id="slider1-text">2月x日</p>
+          </div>
+
+          <div class="slider-section" id="slider2">
+            <p class="section-title">ご予約ひのもう一度確認</p>
+            <div id="slider2-pos"></div>
+            <p id="slider2-text">2月x.x日</p>
+          </div>
+        </section>
+
+        <section id="num-of-people">
+          ご予約人数
+          <div id="num-select2"></div>
+          <div id="num-select1"></div>
+        </section>
+        <section id="palce">
+          <p class="section-title">行き先のご希望</p>
+          <div id="place-checkbox-container"></div>
+        </section>
+        <section>
+          <div id="canvas"></div>
+        </section>
+
+        <section id="btnconfirm">
+          <button id="confirm-btn" onclick="btnClickFn()">次へ</button>
+        </section>
+      </div>
+
+      <div class="page " id="page-2">
+        <section>
+          <p class="section-title">お名前</p>
+          <input type="text" name="" id="" value="田中スペース太郎" />
+          <p class="info">姓名の間にスペースを入れてください</p>
+        </section>
+
+        <section>
+          <p class="section-title" 　>電話番号</p>
+          <input type="text" value="your telephone number" />
+          <p class="info">ハイフォンを入れてください</p>
+        </section>
+        <section>
+          <p class="section-title">メール</p>
+          <div id="mail-input">
+            <input type="text" name="" id="" value=" e-mail" />
+            <p>@</p>
+            <input type="text" value=" domain" />
+            <input type="text" value=" .jpg" />
+          </div>
+       
+        </section>
+
+        <section>
+          <div class="section-title">チケット受け取りパスワード</div>
+          <input type="text" name="" id="" />
+          <div>
+            <p class="info">12文字以上</p>
+            <p class="info">全角英数字必須</p>
+            <p class="info">一つ以上の漢字を含む</p>
+            <p class="info">一つ以上の記号を含む</p>
+          </div>
+        </section>
+      </div>
+      <div class="page" id="page-3">
+        <section>
+          <div class="section-title">同意</div>
+          <div
+            style="
+              /* width: 400px; */
+              border: 1px lightgrey solid;
+              padding: 1rem;
+              border-radius: 4px;
+              height: 100px;
+              overflow-x: auto;
+              overflow-y: hidden;
+            "
+          >
+            <div style="white-space: nowrap">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+              explicabo ipsam, impedit vitae error minima cupiditate iusto,
+              accusamus doloribus vero culpa quibusdam. Distinctio cupiditate
+              doloribus autem adipisci nostrum ex error, quidem impedit omnis
+              labore, hic reiciendis, perferendis nulla nemo dignissimos laborum
+              saepe numquam voluptas esse. Perspiciatis corporis eos ipsum?
+              Culpa ea voluptates eveniet ullam recusandae iste, explicabo
+              architecto beatae ab facilis est atque in blanditiis rerum
+              deserunt quisquam ad animi nisi corporis? Culpa necessitatibus
+              magnam officiis. Beatae tenetur ex, consequuntur, alias tempore
+              dolores quasi harum ad cupiditate reiciendis hic? In accusantium
+              blanditiis alias nesciunt, quod ducimus. Incidunt fuga libero nisi
+              voluptatibus quibusdam omnis quod, mollitia eius iure, similique
+              architecto laudantium quos, praesentium inventore assumenda odio
+              minus deserunt sit aliquid. Quis rerum facilis sequi velit quos
+              odit numquam fuga ad iste, reiciendis, accusantium expedita
+              recusandae vero vel repellat amet nesciunt officiis, possimus
+              molestias fugiat at. Velit, voluptatibus quae sed tempore amet in.
+              Dolor omnis sunt enim, earum magnam voluptates similique alias
+              officia? Nostrum, iste dolores! Deserunt dolorem molestiae cum
+              alias animi nesciunt sint, nulla odit ratione pariatur? Deserunt
+              ea accusamus ex aperiam eum quibusdam aut dolor dolorum deleniti
+              debitis odit, maiores quam esse omnis modi architecto dicta
+              repudiandae necessitatibus molestiae sunt quae quis temporibus
+              quos a? Deserunt tempora ipsam aut non eveniet asperiores quis
+              pariatur. Optio quibusdam voluptas, perferendis exercitationem
+              corporis iusto eius voluptatum omnis consequatur, incidunt,
+              suscipit quo libero rem laborum iure neque error aliquid pariatur
+              nihil minima hic tempore quidem? Tempore, quam distinctio
+              repudiandae magnam dignissimos sit deleniti! Veritatis provident,
+              assumenda beatae rerum asperiores maiores libero laudantium sunt
+              officiis voluptatem in similique ducimus debitis id earum
+              recusandae cumque illo natus numquam. Assumenda minus itaque
+              officiis veniam laborum atque odit repellendus eligendi mollitia
+              perspiciatis id quo tempora, delectus modi et odio voluptatibus
+              alias! Dolorum minima ducimus quis autem porro quibusdam iste
+              inventore accusantium incidunt excepturi aspernatur pariatur,
+              laboriosam non aliquam vel cum illum magni! Corrupti totam rem
+              suscipit eius ut quod, similique repellendus ex cupiditate?
+              Doloremque ea ullam repudiandae, quaerat ipsum consequatur? Itaque
+              ea sapiente adipisci, animi dolores magni vitae. Doloremque
+              deleniti placeat optio nemo qui esse ea, animi debitis tempora
+              exercitationem nam tempore blanditiis error facere laboriosam
+              delectus, libero minima veniam quibusdam suscipit harum! Maxime
+              unde inventore, fuga voluptatibus modi eveniet velit animi quam et
+              id culpa impedit similique. Deleniti mollitia vitae earum placeat
+              dolorum repudiandae consectetur itaque laudantium at, aperiam,
+              nulla quos eligendi assumenda necessitatibus recusandae provident
+              asperiores!
+            </div>
+          </div>
+          <div id="input-agree" style="margin: 1rem">
+            <label for="agree" style="color: #e3e3e3;">同意しない</label>
+            <input type="checkbox" name="agree" id="not-agree-check"  style="border: #e3e3e3 1px solid;" />
+          </div>
+        </section>
+      </div>
+      <div class="page" id="page-4">
+        <p>申し込みが完了しました。</p>
+        <p>難しい手続き達成<br />おめでとう！<br />WS無料招待券差し上げます!</p>
+      </div>
+
+      <div id="nav-btn-container">
+        <div id="btn-page1" class="nav-btn btn-show">
+          <button data-target-page-id="1">リセット</button>
+          <button class="btn-next" data-target-page-id="2">次へ</button>
+        </div>
+        <div id="btn-page2" class="nav-btn">
+          <button class="btn-next" data-target-page-id="3">次へ</button>
+          <button data-target-page-id="1">戻る</button>
+        </div>
+        <div id="btn-page3" class="nav-btn">
+          <button class="btn-next" data-target-page-id="4">次へ</button>
+          <button data-target-page-id="2">戻る</button>
+        </div>
+        <div id="btn-page4" class="nav-btn">
+          <button data-target-page-id="1">リセット</button>
+        </div>
+      </div>
+      <div id="nav-dots">
+        <div class="nav-dot dot-active" id="dot-1"></div>
+        <div class="nav-dot" id="dot-2"></div>
+        <div class="nav-dot" id="dot-3"></div>
+        <div class="nav-dot" id="dot-4"></div>
+      </div>
+    </div>
+  </body>
+  <script src="/asset/js/sketch.js"></script>
+</html>

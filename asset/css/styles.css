@@ -1,0 +1,131 @@
+:root {
+  --color-bg: #bababa;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+}
+
+#canvas {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+input {
+  --input-box-r: 4px;
+  border-radius: var(--input-box-r);
+  border: 1px lightgray solid;
+  color: gray;
+  padding: 8px;
+}
+
+input[type=text] {
+  height: 2rem;
+}
+
+.info {
+  display: block;
+  font-size: 0.7rem;
+  color: lightcoral;
+}
+.info::before {
+  content: "* ";
+}
+
+.page {
+  margin-bottom: 1rem;
+  display: none;
+}
+.page.page-active {
+  display: block;
+}
+
+#nav-btn-container {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+#nav-btn-container button {
+  padding: 4px 8px;
+  background-color: rgb(77, 77, 81);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  height: 3rem;
+  width: 5rem;
+}
+#nav-btn-container .nav-btn {
+  display: none;
+}
+#nav-btn-container .nav-btn.btn-show {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#nav-btn-container #btn-page4 {
+  justify-content: center;
+}
+
+#nav-dots {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem;
+}
+#nav-dots .nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid lightgray;
+}
+#nav-dots .nav-dot.dot-active {
+  background-color: black;
+}
+
+#contents {
+  margin: 0 auto;
+  max-width: 798px;
+  overflow: hidden;
+  padding: 24px;
+}
+#contents section {
+  padding: 16px;
+  background-color: white;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+#contents section .section-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+#contents #date .slider-section {
+  margin-bottom: 1rem;
+}
+#contents #date p {
+  margin: 0;
+}
+
+#place-checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#place-checkbox-container .place-checkbox {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#mail-input {
+  display: flex;
+  gap: 1rem;
+}
+#mail-input input {
+  width: 20%;
+}/*# sourceMappingURL=styles.css.map */
