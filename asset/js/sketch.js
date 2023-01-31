@@ -175,7 +175,11 @@ function changePage(btnItem){
     // change dots
     clearClass(".nav-dot", "dot-active");
     let targetDotEl = document.querySelector( "#dot-" + nextPageID);
-    targetDotEl.classList.add("dot-active");
+      if(targetDotEl){
+
+        targetDotEl.classList.add("dot-active");
+    }
+
 
     //change page contents
     clearClass('.page','page-active');
@@ -190,3 +194,28 @@ function clearClass(selector, targetClassName) {
     dot.classList.remove(targetClassName);
   });
 }
+
+const hiddenLink = document.querySelector('#hidden-link')
+hiddenLink.addEventListener('click',()=>{
+
+const nextPageID = 1;
+
+    // change btns
+    clearClass(".nav-btn", "btn-show");
+    let targetBtnEl =  document.querySelector("#btn-page"+nextPageID)
+    targetBtnEl.classList.add("btn-show");
+
+    // change dots
+    clearClass(".nav-dot", "dot-active");
+    let targetDotEl = document.querySelector( "#dot-" + nextPageID);
+    if(targetDotEl){
+
+        targetDotEl.classList.add("dot-active");
+    }
+
+    //change page contents
+    clearClass('.page','page-active');
+    let targetPageEl = document.querySelector('#page-'+nextPageID);
+    targetPageEl.classList.add('page-active');
+
+})

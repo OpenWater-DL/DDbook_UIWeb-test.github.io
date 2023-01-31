@@ -1,5 +1,5 @@
 :root {
-    --color-bg: #bababa;
+    --color-bg: #e4e4e4;
 }
 
 body {
@@ -165,4 +165,8 @@ input[type=text]{
         width: 20%;
 
     }
+}
+
+#hidden-link{
+    cursor: pointer;
 }

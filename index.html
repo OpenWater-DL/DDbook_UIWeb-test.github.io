@@ -12,7 +12,13 @@
   </head>
   <body>
     <div id="contents">
-      <div class="page page-active" id="page-1">
+        <div class="page page-active" id="page-0" style="background-color: white; padding:1rem">
+            <p>旅人とゆく「認知症世界一周ツアー」<span style="color:#6a88ff;text-decoration: underline; ">申し込みページ</span>です </p>
+            <p>お申し込みされる方は、次の<span id="hidden-link" >ページ</span>を押してください</p>
+        </div>
+
+
+      <div class="page" id="page-1">
         <section id="date">
           <div class="slider-section" id="slider1">
             <p class="section-title">ご予約日</p>
@@ -157,8 +163,12 @@
       </div>
 
       <div id="nav-btn-container">
-        <div id="btn-page1" class="nav-btn btn-show">
-          <button data-target-page-id="1">リセット</button>
+        <div id="btn-page0" class="nav-btn btn-show">
+            <button data-target-page-id="0">Cancel ></button>
+          </div>
+
+        <div id="btn-page1" class="nav-btn">
+          <button data-target-page-id="0">リセット</button>
           <button class="btn-next" data-target-page-id="2">次へ</button>
         </div>
         <div id="btn-page2" class="nav-btn">
@@ -170,11 +180,12 @@
           <button data-target-page-id="2">戻る</button>
         </div>
         <div id="btn-page4" class="nav-btn">
-          <button data-target-page-id="1">リセット</button>
+          <button data-target-page-id="0">リセット</button>
         </div>
       </div>
+
       <div id="nav-dots">
-        <div class="nav-dot dot-active" id="dot-1"></div>
+        <div class="nav-dot" id="dot-1"></div>
         <div class="nav-dot" id="dot-2"></div>
         <div class="nav-dot" id="dot-3"></div>
         <div class="nav-dot" id="dot-4"></div>
