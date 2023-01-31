@@ -132,4 +132,11 @@ input[type=text] {
 
 #hidden-link {
   cursor: pointer;
+}
+
+#agree-checkbox-label {
+  color: #e3e3e3;
+}
+#agree-checkbox-label.agree-scroll-ok {
+  color: black;
 }/*# sourceMappingURL=styles.css.map */

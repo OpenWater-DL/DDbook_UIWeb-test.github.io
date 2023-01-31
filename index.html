@@ -12,7 +12,7 @@
   </head>
   <body>
     <div id="contents">
-        <div class="page page-active" id="page-0" style="background-color: white; padding:1rem">
+        <div class="page" id="page-0" style="background-color: white; padding:1rem">
             <p>旅人とゆく「認知症世界一周ツアー」<span style="color:#6a88ff;text-decoration: underline; ">申し込みページ</span>です </p>
             <p>お申し込みされる方は、次の<span id="hidden-link" >ページ</span>を押してください</p>
         </div>
@@ -85,10 +85,11 @@
           </div>
         </section>
       </div>
-      <div class="page" id="page-3">
+      <div class="page page-active" id="page-3">
         <section>
           <div class="section-title">同意</div>
           <div
+          id="agree-text"
             style="
               /* width: 400px; */
               border: 1px lightgrey solid;
@@ -97,9 +98,9 @@
               height: 100px;
               overflow-x: auto;
               overflow-y: hidden;
-            "
+              white-space: nowrap;
+            " onscroll="checkAgree()"
           >
-            <div style="white-space: nowrap">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
               explicabo ipsam, impedit vitae error minima cupiditate iusto,
               accusamus doloribus vero culpa quibusdam. Distinctio cupiditate
@@ -149,11 +150,11 @@
               dolorum repudiandae consectetur itaque laudantium at, aperiam,
               nulla quos eligendi assumenda necessitatibus recusandae provident
               asperiores!
-            </div>
+           
           </div>
           <div id="input-agree" style="margin: 1rem">
-            <label for="agree" style="color: #e3e3e3;">同意しない</label>
-            <input type="checkbox" name="agree" id="not-agree-check"  style="border: #e3e3e3 1px solid;" />
+            <label id="agree-checkbox-label" for="agree" >同意しない</label>
+            <input disabled type="checkbox" name="agree" id="not-agree-check"  style="border: #e3e3e3 1px solid;" />
           </div>
         </section>
       </div>

@@ -219,3 +219,19 @@ const nextPageID = 1;
     targetPageEl.classList.add('page-active');
 
 })
+
+function checkAgree(){
+let scrollLeft = document.getElementById('agree-text').scrollLeft;
+let scrollWidth = document.getElementById('agree-text').scrollWidth;
+let textAreaWidth = document.getElementById('agree-text').clientWidth;
+console.log(scrollLeft,scrollWidth)
+if(scrollLeft+textAreaWidth== scrollWidth ){
+document.querySelector('#agree-checkbox-label').classList.add('agree-scroll-ok')
+document.querySelector('#not-agree-check').disabled = false;
+}else{
+    document.querySelector('#agree-checkbox-label').classList.remove('agree-scroll-ok')
+    document.querySelector('#not-agree-check').disabled = true;
+
+}
+
+}
