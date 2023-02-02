@@ -1,5 +1,7 @@
 :root {
     --color-bg: #e4e4e4;
+    --input-box-r: 4px;
+
 }
 
 body {
@@ -15,8 +17,7 @@ body {
 }
 
 
-input { 
-    --input-box-r: 4px;
+input {
     // background-color: lightblue;
 
     border-radius: var(--input-box-r);
@@ -25,21 +26,22 @@ input {
     padding: 8px;
 }
 
-input[type=text]{
+input[type=text] {
     height: 2rem;
 }
-.info{
+
+.info {
     display: block;
     font-size: .7rem;
     color: lightcoral;
 
-    &::before{
+    &::before {
         content: '* ';
     }
 }
 
 .page {
-
+    position: relative;
     margin-bottom: 1rem;
     display: none;
 
@@ -52,6 +54,7 @@ input[type=text]{
     display: flex;
     justify-content: center;
     padding: 0;
+
     button {
         padding: 4px 8px;
         background-color: rgb(77, 77, 81);
@@ -74,7 +77,7 @@ input[type=text]{
     }
 
 
-    #btn-page4{
+    #btn-page4 {
         justify-content: center;
     }
 }
@@ -99,10 +102,31 @@ input[type=text]{
     }
 }
 
+#bg-dots {
+    // background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem;
+
+    .bg-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: white;
+        border: 1px solid lightgray;
+
+        &.dot-active {
+            background-color: #4d4d51;
+        }
+    }
+}
+
+
 #contents {
     margin: 0 auto;
     max-width: 798px;
-    
+
 
     overflow: hidden;
     padding: 24px;
@@ -142,17 +166,24 @@ input[type=text]{
 }
 
 
-#place-checkbox-container{
+#place-checkbox-container {
     // background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
-    .place-checkbox{
+
+    .place-checkbox {
         width: 50%;
         display: flex;
-        
+
         justify-content: space-between;
-        
-        
+
+        input[type="checkbox"]:checked+label {
+            width: 100%;
+            font-weight: bold;
+            text-align: right;
+            background-color: #f3f9fe;
+        }
+
     }
 }
 
@@ -165,17 +196,97 @@ input[type=text]{
         width: 20%;
 
     }
+
+    button {
+        height: 50px;
+        width: 20%;
+        padding: 8px;
+        border-radius: var(--input-box-r);
+        border: 1px lightgray solid;
+        background-color: white;
+        text-align: left;
+
+    }
+
 }
 
-#hidden-link{
+#hidden-link {
     cursor: pointer;
+    color:#6a88ff;
 }
 
-#agree-checkbox-label{
+#agree-checkbox-label {
     color: #e3e3e3;
 
-    &.agree-scroll-ok{
+    &.agree-scroll-ok {
         color: black;
     }
 }
 
+.modal {
+    position: fixed;
+    background: yellow;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border-radius: var(--input-box-r);
+        width: 50%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+
+    text-align: center;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #000000;
+        font-size: 16px;
+        margin-bottom: .5rem;
+
+    }
+
+    #week-table {
+        width: fit-content;
+        display: inline-block;
+        border-collapse: collapse;
+        text-align: center;
+        margin-bottom: 1rem ;
+        tr, td{
+            padding: .5rem;
+         
+            border: 1px #aaaaaa solid;
+            // background-color: #aaaaaa;
+        }
+
+        .table-r1{
+   color: #000000;/*文字色*/
+             background: #dddddd;
+        }
+
+       
+
+    }
+
+
+
+}

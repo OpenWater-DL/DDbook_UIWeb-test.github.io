@@ -1,5 +1,7 @@
+@charset "UTF-8";
 :root {
   --color-bg: #e4e4e4;
+  --input-box-r: 4px;
 }
 
 body {
@@ -15,7 +17,6 @@ body {
 }
 
 input {
-  --input-box-r: 4px;
   border-radius: var(--input-box-r);
   border: 1px lightgray solid;
   color: gray;
@@ -36,6 +37,7 @@ input[type=text] {
 }
 
 .page {
+  position: relative;
   margin-bottom: 1rem;
   display: none;
 }
@@ -86,6 +88,23 @@ input[type=text] {
   background-color: black;
 }
 
+#bg-dots {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem;
+}
+#bg-dots .bg-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid lightgray;
+}
+#bg-dots .bg-dot.dot-active {
+  background-color: #4d4d51;
+}
+
 #contents {
   margin: 0 auto;
   max-width: 798px;
@@ -121,6 +140,12 @@ input[type=text] {
   display: flex;
   justify-content: space-between;
 }
+#place-checkbox-container .place-checkbox input[type=checkbox]:checked + label {
+  width: 100%;
+  font-weight: bold;
+  text-align: right;
+  background-color: #f3f9fe;
+}
 
 #mail-input {
   display: flex;
@@ -129,9 +154,19 @@ input[type=text] {
 #mail-input input {
   width: 20%;
 }
+#mail-input button {
+  height: 50px;
+  width: 20%;
+  padding: 8px;
+  border-radius: var(--input-box-r);
+  border: 1px lightgray solid;
+  background-color: white;
+  text-align: left;
+}
 
 #hidden-link {
   cursor: pointer;
+  color: #6a88ff;
 }
 
 #agree-checkbox-label {
@@ -139,4 +174,57 @@ input[type=text] {
 }
 #agree-checkbox-label.agree-scroll-ok {
   color: black;
+}
+
+.modal {
+  position: fixed;
+  background: yellow;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* The Close Button */
+}
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border-radius: var(--input-box-r);
+  width: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.modal h1 {
+  font-size: 1.5rem;
+}
+.modal .close {
+  color: #000000;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}
+.modal #week-table {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.modal #week-table tr, .modal #week-table td {
+  padding: 0.5rem;
+  border: 1px #aaaaaa solid;
+}
+.modal #week-table .table-r1 {
+  color: #000000; /*文字色*/
+  background: #dddddd;
 }/*# sourceMappingURL=styles.css.map */

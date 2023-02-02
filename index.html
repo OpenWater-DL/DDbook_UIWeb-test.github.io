@@ -12,8 +12,8 @@
   </head>
   <body>
     <div id="contents">
-        <div class="page  page-active" id="page-0" style="background-color: white; padding:1rem">
-            <p>旅人とゆく「認知症世界一周ツアー」<span style="color:#6a88ff;text-decoration: underline; ">申し込みページ</span>です </p>
+        <div class="page" id="page-0" style="background-color: white; padding:1rem">
+            <p>旅人とゆく「認知症世界一周ツアー」<span style="color:#000;text-decoration: underline; ">申し込みページ</span>です </p>
             <p>お申し込みされる方は、次の<span id="hidden-link" >ページ</span>を押してください</p>
         </div>
 
@@ -36,7 +36,6 @@
         <section id="num-of-people">
           ご予約人数
           <div id="num-select2"></div>
-          <div id="num-select1"></div>
         </section>
         <section id="palce">
           <p class="section-title">行き先のご希望</p>
@@ -46,12 +45,47 @@
           <div id="canvas"></div>
         </section>
 
-        <section id="btnconfirm">
-          <button id="confirm-btn" onclick="btnClickFn()">次へ</button>
-        </section>
+        <div id="week-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h1>天気の確認</h1>
+                <p> 昨日、東京都練馬区は晴れでした。</p>
+               
+                <div> <table id='week-table'>
+                    <tr class="table-r1">
+                      <td>木</td>
+                      <td>水</td>
+                      <td>土</td>
+                      <td>月</td>
+                      <td>金</td>
+                      <td>日</td>
+                      <td>火</td>
+                    </tr>
+                    <tr>
+                        <td>晴れ</td>
+                        <td>晴れ</td>
+                        <td>晴れ</td>
+                        <td>晴れ</td>
+                        <td>晴れ</td>
+                        <td>晴れ</td>
+                        <td>晴れ</td>
+                      </tr>
+                  </table>
+                </div>
+                   
+               
+               
+                  
+                <div>
+                    <button class="close">天気の確認じゃないよ</button>
+                </div>
+            </div>
+            
+        </div>
+
+
       </div>
 
-      <div class="page " id="page-2">
+      <div class="page" id="page-2">
         <section>
           <p class="section-title">お名前</p>
           <input type="text" name="" id="" value="田中スペース太郎" />
@@ -60,16 +94,17 @@
 
         <section>
           <p class="section-title" 　>電話番号</p>
-          <input type="text" value="your telephone number" />
-          <p class="info">ハイフォンを入れてください</p>
+          <input type="text" value="080-1234-123？" />
+          <p class="info">電話番号の下一桁が6か9になっているようです。</p>
         </section>
         <section>
           <p class="section-title">メール</p>
           <div id="mail-input">
             <input type="text" name="" id="" value=" e-mail" />
             <p>@</p>
-            <input type="text" value=" domain" />
-            <input type="text" value=" .jpg" />
+            <!-- <input type="text" value=" domain" /> -->
+            <button id='mail-change-btn1'onclick="changeDomain()">domain</button>
+            <button id='mail-change-btn2'onclick="changeExtensionName()">.jpg</button>
           </div>
        
         </section>
@@ -153,8 +188,9 @@
            
           </div>
           <div id="input-agree" style="margin: 1rem">
-            <label id="agree-checkbox-label" for="agree" >同意しない</label>
-            <input disabled type="checkbox" name="agree" id="not-agree-check"  style="border: #e3e3e3 1px solid;" />
+            <label id="agree-checkbox-label" for="agree" >同意しない</label>            
+            <input checked disabled type="checkbox" name="agree" id="not-agree-check"  style="border: #e3e3e3 1px solid;" />
+            <p class="info" id="agree-checkbox-info" style="display: none;">同意してください</p>
           </div>
         </section>
       </div>
@@ -164,12 +200,13 @@
       </div>
 
       <div id="nav-btn-container">
-        <div id="btn-page0" class="nav-btn btn-show">
-            <button data-target-page-id="0">Cancel ></button>
+        <div id="btn-page0" class="nav-btn">
+            <button data-target-page-id="0">Button ></button>
           </div>
 
         <div id="btn-page1" class="nav-btn">
           <button data-target-page-id="0">リセット</button>
+          <button id="week-modal-open-btn" class="btn-next" data-target-page-id="1">確認</button>
           <button class="btn-next" data-target-page-id="2">次へ</button>
         </div>
         <div id="btn-page2" class="nav-btn">
@@ -177,7 +214,9 @@
           <button data-target-page-id="1">戻る</button>
         </div>
         <div id="btn-page3" class="nav-btn">
-          <button class="btn-next" data-target-page-id="4">次へ</button>
+          <!-- <button class="btn-next" data-target-page-id="4">次へ</button> -->
+          <button id="confirm-btn"  data-target-page-id="3" onclick="btnClickFn()">次へ</button>
+
           <button data-target-page-id="2">戻る</button>
         </div>
         <div id="btn-page4" class="nav-btn">
@@ -185,11 +224,18 @@
         </div>
       </div>
 
-      <div id="nav-dots">
+      <!-- <div id="nav-dots">
         <div class="nav-dot" id="dot-1"></div>
         <div class="nav-dot" id="dot-2"></div>
         <div class="nav-dot" id="dot-3"></div>
         <div class="nav-dot" id="dot-4"></div>
+      </div> -->
+
+      <div id="bg-dots">
+        <div class="bg-dot dot-active" id="dot-1" data-color="#4d4d51"></div>
+        <div class="bg-dot" id="dot-2"  data-color="#fc3636"></div>
+        <div class="bg-dot" id="dot-3" data-color="#1edc62"> </div>
+        <div class="bg-dot" id="dot-4" data-color="#f7ba38"></div>
       </div>
     </div>
   </body>
