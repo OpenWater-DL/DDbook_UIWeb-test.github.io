@@ -237,7 +237,7 @@ function checkAgree() {
   let scrollWidth = document.getElementById("agree-text").scrollWidth;
   let textAreaWidth = document.getElementById("agree-text").clientWidth;
   console.log(scrollLeft, scrollWidth);
-  if (scrollLeft + textAreaWidth == scrollWidth) {
+  if (scrollLeft + textAreaWidth >= scrollWidth) {
     document
       .querySelector("#agree-checkbox-label")
       .classList.add("agree-scroll-ok");
