@@ -8,34 +8,34 @@ let button;
 var count = 0;
 
 function setup() {
-  var myCanvas = createCanvas(windowWidth, windowHeight);
+//   var myCanvas = createCanvas(windowWidth, windowHeight);
 
-  myCanvas.parent("canvas");
+//   myCanvas.parent("canvas");
   setupSlider();
   textAlign(CENTER);
   setupSelector();
 
-  myButton = new Button({
-    x: 0,
-    y: 100,
-    width: 100,
-    height: 50,
-    align_x: 0,
-    align_y: 0,
-    content: "確認",
-    on_press() {
-      count++;
+//   myButton = new Button({
+//     x: 0,
+//     y: 100,
+//     width: 100,
+//     height: 50,
+//     align_x: 0,
+//     align_y: 0,
+//     content: "確認",
+//     on_press() {
+//       count++;
 
-      let rdmRange = 40; //randomRange
-      myButton.place(
-        random(70, 400),
-        random(10, rdmRange),
-        random(30, 200),
-        random(10, 70)
-      );
-    },
-  });
-  console.log("🚀 ~ file: sketch.js:17 ~ setup ~ myButton", myButton);
+//       let rdmRange = 40; //randomRange
+//       myButton.place(
+//         random(70, 400),
+//         random(10, rdmRange),
+//         random(30, 200),
+//         random(10, 70)
+//       );
+//     },
+//   });
+//   console.log("🚀 ~ file: sketch.js:17 ~ setup ~ myButton", myButton);
 
   // button = createButton('click me');
   // button.parent('btnconfirm')
@@ -122,7 +122,7 @@ function setupSelector() {
 function draw() {
   background(255);
   //   myButton.style('default',{background:'grey'})
-  myButton.draw();
+//   myButton.draw();
 
   let val = slider.value();
   let val2 = slider2.value();
@@ -139,9 +139,9 @@ function draw() {
   slider1_text.innerText = str;
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
+// function windowResized() {
+//   resizeCanvas(windowWidth, windowHeight);
+// }
 
 let clickCount = 0;
 function btnClickFn() {
@@ -360,6 +360,11 @@ modal_close_btn.onclick = function(){
     modal.style.display = "none";
 }
 
+function page0_fakeBtn(){
+
+    document.querySelector('#fake-btn-info').classList.add('active');
+
+}
 
 
 

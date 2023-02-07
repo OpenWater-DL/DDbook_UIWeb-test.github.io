@@ -11,10 +11,40 @@
     <!-- https://github.com/koerismo/p5.buttons#Quickstart -->
   </head>
   <body>
+    <header>
+        <!-- <div id="site-logo">
+            <img src="./asset/img/compass.png" alt="" srcset="">
+        </div> -->
+        <div id="title-img"> <img src="./asset/img/obi@2x.png" alt="" srcset=""></div>
+        
+    </header>
+    <img id="map-img" src="./asset/img/map.png" alt="">
+
     <div id="contents">
-        <div class="page" id="page-0" style="background-color: white; padding:1rem">
-            <p>旅人とゆく「認知症世界一周ツアー」<span style="color:#000;text-decoration: underline; ">申し込みページ</span>です </p>
-            <p>お申し込みされる方は、次の<span id="hidden-link" >ページ</span>を押してください</p>
+
+        <div class="page" id="page-0">
+            <div id="page0-map-div"> <img id="map-img" src="./asset/img/map.png" alt=""> </div>
+           
+            <div id="tabibito-set">
+                <div class="dialog-box">
+                    <div class="dialog-content">                    
+                        <p>よし！2月31日、</p>
+                        <p>1人でカイケイの壁に行こう！</p>
+                        
+                    </div>                
+                </div>
+                <img id="tabibito-img" src="./asset/img/tabibito@2x.png" alt="" srcset="">
+            </div>
+            
+            
+            <div id="page0-intro">
+                <p>こんにちは！<br>旅人とゆく「認知症世界一周ツアー」<span style="color:#000;text-decoration: underline; ">申し込みページ</span>です。お申し込みされる方は、次の<span id="hidden-link" >ページ</span>を押してください</p>
+            <button onclick="page0_fakeBtn()">行こう</button>
+            <div id="fake-btn-info" class="info">ブルーのページを押してください!</div>
+            </div>
+
+            
+            
         </div>
 
 
@@ -27,23 +57,23 @@
           </div>
 
           <div class="slider-section" id="slider2">
-            <p class="section-title">ご予約ひのもう一度確認</p>
+            <p>ご予約ひのもう一度確認</p>
             <div id="slider2-pos"></div>
             <p id="slider2-text">2月x.x日</p>
           </div>
         </section>
 
         <section id="num-of-people">
-          ご予約人数
+            <p class="section-title">ご予約人数</p>
+
+          
           <div id="num-select2"></div>
         </section>
         <section id="palce">
           <p class="section-title">行き先のご希望</p>
           <div id="place-checkbox-container"></div>
         </section>
-        <section>
-          <div id="canvas"></div>
-        </section>
+      
 
         <div id="week-modal" class="modal" style="display: none;">
             <div class="modal-content">
@@ -195,13 +225,23 @@
         </section>
       </div>
       <div class="page" id="page-4">
-        <p>申し込みが完了しました。</p>
-        <p>難しい手続き達成<br />おめでとう！<br />WS無料招待券差し上げます!</p>
+        <div id="over-success">
+            <img src="./asset/img/success.png" alt="">
+            <p>申し込みが完了しました!</p>
+        </div>
+       
+        <div id="over-dialog-box">
+            <div class="over-content">
+                <p>難しい手続き達成<br />おめでとう！<br />WS無料招待券差し上げます!</p>    
+            </div>
+                  
+        </div>
+        <img id="ticket-img" src="./asset/img/ticket_green.png" alt="">
       </div>
 
       <div id="nav-btn-container">
         <div id="btn-page0" class="nav-btn">
-            <button data-target-page-id="0">Button ></button>
+            <!-- <button data-target-page-id="0">楽しみですね</button> -->
           </div>
 
         <div id="btn-page1" class="nav-btn">
@@ -238,6 +278,11 @@
         <div class="bg-dot" id="dot-4" data-color="#f7ba38"></div>
       </div>
     </div>
+    <footer>
+        <div>© 2023 認知症世界一周ツアー</div>
+        <!-- <div><img src="./asset/img/button_top.svg" alt="" srcset=""></div> -->
+        
+    </footer>
   </body>
   <script src="./asset/js/sketch.js"></script>
 </html>
