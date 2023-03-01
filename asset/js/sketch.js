@@ -552,7 +552,7 @@ function page2_confirmBtn_dialog(){
 
 active_for_test();
 function active_for_test() {
-  activeID = 2;
+  activeID = 0;
   nowPage = activeID;
 
   document.querySelector("#page-" + activeID).classList.add("page-active");
