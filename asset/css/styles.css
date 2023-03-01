@@ -36,13 +36,12 @@ header {
 
 #title-img {
   z-index: 2;
-  position: relative;
-  bottom: 0px;
+  position: absolute;
+  top: 2rem;
   width: 100%;
   text-align: center;
 }
 #title-img img {
-  margin: 2rem;
   max-width: 80%;
   width: 400px;
 }
@@ -117,7 +116,6 @@ footer div {
   padding-bottom: 2rem;
   margin-bottom: 1rem;
   border-radius: 4px;
-  border-bottom: #d3d3d3 1px solid;
 }
 #contents section .section-title {
   display: block;
@@ -132,11 +130,67 @@ footer div {
   height: 4px;
   background-color: #ff748b;
 }
-#contents #date .slider-section {
+#contents #date .date-sub-section {
   margin-bottom: 1rem;
+}
+#contents #date .date-sub-section #checkin-date {
+  margin-top: 0.5rem;
 }
 #contents #date p {
   margin: 0;
+}
+
+#page-2-name-section input {
+  width: 20%;
+  margin-right: 1rem;
+}
+
+#page-2-phone-num-section {
+  position: relative;
+  width: 100%;
+}
+
+#phone-num {
+  display: flex;
+  width: 100%;
+  gap: 4px;
+}
+#phone-num .phone-num-input {
+  width: 7%;
+  max-width: 30px;
+  text-align: center;
+  padding: 0;
+}
+
+#confirm-test-ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#confirm-test-ul li {
+  width: 120px;
+  height: 100px;
+  padding: 0;
+  list-style: none;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#confirm-test-ul li img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 120px;
+  height: 100px;
+}
+#confirm-test-ul li.selected {
+  border: solid 2px rgb(68, 159, 224);
+  width: 116px;
+  height: 96px;
+}
+#confirm-test-ul li.selected img {
+  width: 116px;
+  height: 96px;
 }
 
 #place-checkbox-container {
@@ -174,7 +228,6 @@ footer div {
 
 #hidden-link {
   cursor: pointer;
-  color: #6a88ff;
 }
 
 #agree-checkbox-label {
@@ -220,7 +273,6 @@ footer div {
   margin-bottom: 0.5rem;
 }
 .modal #week-table {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
@@ -302,7 +354,6 @@ select {
   color: green;
   gap: 1rem;
   align-items: center;
-  margin: 2rem;
   white-space: nowrap;
 }
 #page-4 #over-success img {
@@ -310,7 +361,12 @@ select {
   height: 50px;
 }
 #page-4 #over-dialog-box {
-  width: 300px;
+  position: absolute;
+  right: 0;
+  top: -50px;
+  transform: rotate(15deg);
+  z-index: 10;
+  width: 200px;
   --color-dialog-box: #e7f6ff;
   margin-bottom: 0;
 }
@@ -319,6 +375,9 @@ select {
   border-radius: 1rem;
   text-align: center;
   padding: 8px;
+}
+#page-4 #over-dialog-box .over-content p {
+  text-align: center;
 }
 #page-4 #over-dialog-box::after {
   content: "";
@@ -415,7 +474,7 @@ select {
   left: -40px;
   transform: translate(-50%, -50%);
   width: 300px;
-  --color-dialog-box: #ffffff;
+  --color-dialog-box: #ffffdb;
   margin-bottom: 0;
   transform: rotate(5deg);
   filter: drop-shadow(0px 0px 4px rgb(45, 157, 255));
@@ -441,11 +500,71 @@ select {
   border-bottom: 10px solid transparent;
   border-left: 10px solid transparent;
 }
+#page-0 #page0-dialog {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: #dddddd 2px 1px 5px;
+  border: 1px lightgray solid;
+  width: 70%;
+  height: 150px;
+  text-align: center;
+  transition: 1s ease-in-out;
+}
+#page-0 #page0-dialog p {
+  margin: 3rem 0 1rem 0;
+}
+#page-0 #page0-dialog #page0-dialog-rotate-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+#page-0 #page0-dialog button {
+  width: 50px;
+  height: 20px;
+}
+#page-0 #page0-dialog #page0-dialog-close {
+  text-align: left;
+  margin-top: 1rem;
+}
+#page-0 #page0-dialog #page0-dialog-close p {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  color: lightgrey;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#page-1 #checkin-date {
+  display: flex;
+  gap: 8px;
+}
+#page-1 #checkin-date .sel-date {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+#page-1 #checkin-date .sel-date p {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
 
 #nav-btn-container {
   display: flex;
   justify-content: center;
-  padding: 0;
+  padding: 2rem;
 }
 #nav-btn-container button {
   padding: 4px 16px;
@@ -468,8 +587,48 @@ select {
   display: flex;
   justify-content: center;
 }
+#nav-btn-container #confirm-btn {
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(102, 102, 102) 77%, rgb(102, 102, 102) 100%);
+  color: white;
+  border-radius: 2px;
+  box-shadow: none;
+}
+#nav-btn-container #page-3-arrow-btn {
+  transition: 1s ease-in;
+  transform: translate(0%);
+}
+#nav-btn-container #page-3-arrow-btn.move-to-right {
+  transform: translate(100%);
+}
 #nav-btn-container #btn-page4 {
   justify-content: center;
+}
+
+#page-3-confirm-dialog #attention-img {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 60px;
+  transform: translate(-50%);
+}
+#page-3-confirm-dialog p {
+  color: #eb4c0d;
+  width: 100%;
+  font-size: 0.9rem;
+}
+#page-3-confirm-dialog ul {
+  padding: 0;
+  text-align: center;
+}
+#page-3-confirm-dialog button {
+  border-radius: 2px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 8px;
+  margin: 4px;
+  box-shadow: none;
+  border: lightgray 1px solid;
+  border-radius: 4px;
 }
 
 #nav-dots {
@@ -504,4 +663,47 @@ select {
 }
 #bg-dots .bg-dot.dot-active {
   background-color: #4d4d51;
+}
+
+#pos-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+#pos-nav .nav-item {
+  --nav-main-color:#3484A4;
+  width: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+}
+#pos-nav .nav-item .num {
+  background-color: lightgray;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#pos-nav .nav-item .text {
+  width: 100%;
+  color: var(--nav-main-color);
+  font-size: 0.9rem;
+  line-height: 1rem;
+}
+#pos-nav .nav-item.state-1 .num {
+  background-color: white;
+  border: 2px solid var(--nav-main-color);
+  color: var(--nav-main-color);
+}
+#pos-nav .nav-item.state-2 .num {
+  background-color: var(--nav-main-color);
+  border: 2px solid var(--nav-main-color);
+  color: white;
 }/*# sourceMappingURL=styles.css.map */

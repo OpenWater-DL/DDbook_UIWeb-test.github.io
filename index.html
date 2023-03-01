@@ -12,276 +12,404 @@
   </head>
   <body>
     <header>
-        <!-- <div id="site-logo">
+      <!-- <div id="site-logo">
             <img src="./asset/img/compass.png" alt="" srcset="">
         </div> -->
-        <div id="title-img"> <img src="./asset/img/obi@2x.png" alt="" srcset=""></div>
-        
+      <div id="title-img">
+        <img src="./asset/img/obi@2x.png" alt="" srcset="" />
+      </div>
     </header>
-    <img id="map-img" src="./asset/img/map.png" alt="">
+    <img id="map-img" src="./asset/img/map.png" alt="" />
 
     <div id="contents">
-
-        <div class="page" id="page-0">
-            <div id="page0-map-div"> <img id="map-img" src="./asset/img/map.png" alt=""> </div>
-           
-            <div id="tabibito-set">
-                <div class="dialog-box">
-                    <div class="dialog-content">                    
-                        <p>よし！2月31日、</p>
-                        <p>1人でカイケイの壁に行こう！</p>
-                        
-                    </div>                
-                </div>
-                <img id="tabibito-img" src="./asset/img/tabibito@2x.png" alt="" srcset="">
-            </div>
-            
-            
-            <div id="page0-intro">
-                <p>こんにちは！<br>旅人とゆく「認知症世界一周ツアー」<span style="color:#000;text-decoration: underline; ">申し込みページ</span>です。お申し込みされる方は、次の<span id="hidden-link" >ページ</span>を押してください</p>
-            <button onclick="page0_fakeBtn()">行こう</button>
-            <div id="fake-btn-info" class="info">ブルーのページを押してください!</div>
-            </div>
-
-            
-            
+      <div class="page" id="page-0">
+        <div id="page0-map-div">
+          <img id="map-img" src="./asset/img/map.png" alt="" />
         </div>
+
+        <div id="tabibito-set">
+          <div class="dialog-box">
+            <div class="dialog-content">
+              <p>認知症世界をめぐる旅の申し込みをしてみよう!</p>
+            </div>
+          </div>
+          <img
+            id="tabibito-img"
+            src="./asset/img/tabibito@2x.png"
+            alt=""
+            srcset=""
+          />
+        </div>
+
+
+
+
+        <div id="page0-intro">
+          <p>
+            こんにちは！<br />
+            旅人とゆく<span style="color: #6a88ff; text-decoration: underline"
+              >「認知症世界一周ツアー」</span
+            >申し込みページです。お申し込みされる方は、次の<span
+              id="hidden-link"
+              >ページ</span
+            >を押してください
+          </p>
+          <button onclick="page0_fakeBtn()">行かない</button>
+          <div id="fake-btn-info" class="info">
+            ブルーのページを押してください!
+          </div>
+        </div>
+
+        <div id="page0-dialog" style="display: none;">
+          <p>そんなこと言わないで進みましょう！</p>
+          <button id="page0-dialog-ok">OK</button>
+          <div id="page0-dialog-close"><p>Close</p></div>
+          <div id="page0-dialog-rotate-btn">
+            <img src="./asset/img/rotateIcon.png" alt="" srcset="" />
+          </div>
+        </div>
+      </div>
+
+
+      <div id="pos-nav">
+        <div class="nav-item state-1">
+          <div class="num">1</div>
+          <div class="text">ご説明</div>
+        </div>
+        <div class="nav-item state-2">
+          <div class="num">2</div>
+          <div class="text">日程の入力</div>
+        </div>
+        <div class="nav-item state-3">
+          <div class="num">3</div>
+          <div class="text">あなたの情報</div>
+        </div>
+        <div class="nav-item state-4">
+          <div class="num">4</div>
+          <div class="text">ご確認</div>
+        </div>
+      </div>
 
 
       <div class="page" id="page-1">
         <section id="date">
-          <div class="slider-section" id="slider1">
-            <p class="section-title">ご予約日</p>
-            <div id="slider1-pos"></div>
-            <p id="slider1-text">2月x日</p>
+   
+            <div class="date-sub-section">
+            <p class="section-title">チェックイン</p>
+            <div id="checkin-date">
+              <div class="sel-date">
+                <div id="y"></div>
+                <p>年</p>
+              </div>
+
+              <div class="sel-date">
+                <div id="m"></div>
+                <p>月</p>
+              </div>
+              <div class="sel-date">
+                <div id="d"></div>
+                <p>日</p>
+              </div>
+              <div class="sel-date">
+                <div id="wd"></div>
+                <p>曜</p>
+              </div>
+            </div>
           </div>
 
-          <div class="slider-section" id="slider2">
-            <p>ご予約ひのもう一度確認</p>
-            <div id="slider2-pos"></div>
-            <p id="slider2-text">2月x.x日</p>
-          </div>
+            <div class="date-sub-section" id="slider1">
+              <p class="section-title">チェックアウト</p>
+  
+              <div id="slider1-pos"></div>
+              <p id="slider1-text">2月x日</p>
+            </div>
+         
         </section>
 
         <section id="num-of-people">
-            <p class="section-title">ご予約人数</p>
+          <p class="section-title">ご予約人数</p>
 
-          
           <div id="num-select2"></div>
         </section>
         <section id="palce">
           <p class="section-title">行き先のご希望</p>
           <div id="place-checkbox-container"></div>
         </section>
-      
 
-        <div id="week-modal" class="modal" style="display: none;">
-            <div class="modal-content">
-                <h1>天気の確認</h1>
-                <p> 昨日、東京都練馬区は晴れでした。</p>
-               
-                <div> <table id='week-table'>
-                    <tr class="table-r1">
-                      <td>木</td>
-                      <td>水</td>
-                      <td>土</td>
-                      <td>月</td>
-                      <td>金</td>
-                      <td>日</td>
-                      <td>火</td>
-                    </tr>
-                    <tr>
-                        <td>晴れ</td>
-                        <td>晴れ</td>
-                        <td>晴れ</td>
-                        <td>晴れ</td>
-                        <td>晴れ</td>
-                        <td>晴れ</td>
-                        <td>晴れ</td>
-                      </tr>
-                  </table>
-                </div>
-                   
-               
-               
-                  
-                <div>
-                    <button class="close">天気の確認じゃないよ</button>
-                </div>
+        <div id="week-modal" class="modal" style="display: none">
+          <div class="modal-content">
+            <h1>天気の確認</h1>
+            <p>昨日、東京都練馬区は晴れでした。</p>
+
+            <div>
+              <table id="week-table">
+                <tr class="table-r1">
+                  <td>木</td>
+                  <td>水</td>
+                  <td>土</td>
+                  <td>月</td>
+                  <td>金</td>
+                  <td>日</td>
+                  <td>火</td>
+                </tr>
+                <tr>
+                  <td>晴れ</td>
+                  <td>晴れ</td>
+                  <td>晴れ</td>
+                  <td>晴れ</td>
+                  <td>晴れ</td>
+                  <td>晴れ</td>
+                  <td>晴れ</td>
+                </tr>
+              </table>
             </div>
-            
+
+            <div>
+              <button class="close">天気の確認じゃないよ</button>
+            </div>
+          </div>
         </div>
-
-
       </div>
 
       <div class="page" id="page-2">
-        <section>
+        <section id="page-2-name-section">
           <p class="section-title">お名前</p>
-          <input type="text" name="" id="" value="田中スペース太郎" />
-          <p class="info">姓名の間にスペースを入れてください</p>
+          <label for="first">名</label>
+          <input type="text" name="first" id="" value="" />
+          <label for="last">姓</label>
+          <input type="text" name="last" id="" value="" />
+
+          <!-- <p class="info">姓名の間にスペースを入れてください</p> -->
         </section>
 
-        <section>
-          <p class="section-title" 　>電話番号</p>
-          <input type="text" value="080-1234-123？" />
-          <p class="info">電話番号の下一桁が6か9になっているようです。</p>
+
+        <section id="page-2-name-section">
+          <p class="section-title">Furigana</p>
+          <!-- <label for="first">名</label> -->
+          <input  type="text" name="" id="" value="" style="width: 95%;" />
+         
+          <!-- <p class="info">姓名の間にスペースを入れてください</p> -->
         </section>
+
+
+        <section>
+          <p class="section-title">性別</p>      
+          <select name="" id="">
+            <option value="">♀</option>
+            <option value="">👨</option>
+            <option value="">その他</option>
+
+          </select>
+        </section>
+ 
+
+        <section id="page-2-phone-num-section">
+          <p class="section-title" 　>電話番号</p>         
+
+        </section>
+
+
         <section>
           <p class="section-title">メール</p>
           <div id="mail-input">
             <input type="text" name="" id="" value=" e-mail" />
             <p>@</p>
             <!-- <input type="text" value=" domain" /> -->
-            <button id='mail-change-btn1'onclick="changeDomain()">domain</button>
-            <button id='mail-change-btn2'onclick="changeExtensionName()">.jpg</button>
+            <button id="mail-change-btn1" onclick="changeDomain()">
+              domain
+            </button>
+            <button id="mail-change-btn2" onclick="changeExtensionName()">
+              .jpg
+            </button>
           </div>
-       
         </section>
 
         <section>
-          <div class="section-title">チケット受け取りパスワード</div>
-          <input type="text" name="" id="" />
-          <div>
-            <p class="info">12文字以上</p>
-            <p class="info">全角英数字必須</p>
-            <p class="info">一つ以上の漢字を含む</p>
-            <p class="info">一つ以上の記号を含む</p>
-          </div>
-        </section>
+          <div class="section-title">画像認証</div>
+        <p>果物の画像だけ選んでください</p>
+        <ul id="confirm-test-ul">
+          <li class="selected"><img src="./asset/img/confirmTest/tomato.png" alt="" srcset=""></li>
+          <li><img src="./asset/img/confirmTest/watermelon.png" alt="" srcset=""></li>
+          <li><img src="./asset/img/confirmTest/melon.png" alt="" srcset=""></li>
+          <li><img src="./asset/img/confirmTest/avocado.png" alt="" srcset=""></li>
+        </ul>
+      
       </div>
+
+
       <div class="page" id="page-3">
         <section>
           <div class="section-title">同意</div>
           <div
-          id="agree-text"
+            id="agree-text"
             style="
               /* width: 400px; */
               border: 1px lightgrey solid;
               padding: 1rem;
               border-radius: 4px;
-              height: 100px;
-              overflow-x: auto;
-              overflow-y: hidden;
-              white-space: nowrap;
-            " onscroll="checkAgree()"
+              height: 500px;
+              /* overflow-x: auto; */
+              overflow-y: auto;
+              /* overflow-y: hidden; */
+              /* white-space: nowrap; */
+            "
+            onscroll="checkAgree_y()"
           >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-              explicabo ipsam, impedit vitae error minima cupiditate iusto,
-              accusamus doloribus vero culpa quibusdam. Distinctio cupiditate
-              doloribus autem adipisci nostrum ex error, quidem impedit omnis
-              labore, hic reiciendis, perferendis nulla nemo dignissimos laborum
-              saepe numquam voluptas esse. Perspiciatis corporis eos ipsum?
-              Culpa ea voluptates eveniet ullam recusandae iste, explicabo
-              architecto beatae ab facilis est atque in blanditiis rerum
-              deserunt quisquam ad animi nisi corporis? Culpa necessitatibus
-              magnam officiis. Beatae tenetur ex, consequuntur, alias tempore
-              dolores quasi harum ad cupiditate reiciendis hic? In accusantium
-              blanditiis alias nesciunt, quod ducimus. Incidunt fuga libero nisi
-              voluptatibus quibusdam omnis quod, mollitia eius iure, similique
-              architecto laudantium quos, praesentium inventore assumenda odio
-              minus deserunt sit aliquid. Quis rerum facilis sequi velit quos
-              odit numquam fuga ad iste, reiciendis, accusantium expedita
-              recusandae vero vel repellat amet nesciunt officiis, possimus
-              molestias fugiat at. Velit, voluptatibus quae sed tempore amet in.
-              Dolor omnis sunt enim, earum magnam voluptates similique alias
-              officia? Nostrum, iste dolores! Deserunt dolorem molestiae cum
-              alias animi nesciunt sint, nulla odit ratione pariatur? Deserunt
-              ea accusamus ex aperiam eum quibusdam aut dolor dolorum deleniti
-              debitis odit, maiores quam esse omnis modi architecto dicta
-              repudiandae necessitatibus molestiae sunt quae quis temporibus
-              quos a? Deserunt tempora ipsam aut non eveniet asperiores quis
-              pariatur. Optio quibusdam voluptas, perferendis exercitationem
-              corporis iusto eius voluptatum omnis consequatur, incidunt,
-              suscipit quo libero rem laborum iure neque error aliquid pariatur
-              nihil minima hic tempore quidem? Tempore, quam distinctio
-              repudiandae magnam dignissimos sit deleniti! Veritatis provident,
-              assumenda beatae rerum asperiores maiores libero laudantium sunt
-              officiis voluptatem in similique ducimus debitis id earum
-              recusandae cumque illo natus numquam. Assumenda minus itaque
-              officiis veniam laborum atque odit repellendus eligendi mollitia
-              perspiciatis id quo tempora, delectus modi et odio voluptatibus
-              alias! Dolorum minima ducimus quis autem porro quibusdam iste
-              inventore accusantium incidunt excepturi aspernatur pariatur,
-              laboriosam non aliquam vel cum illum magni! Corrupti totam rem
-              suscipit eius ut quod, similique repellendus ex cupiditate?
-              Doloremque ea ullam repudiandae, quaerat ipsum consequatur? Itaque
-              ea sapiente adipisci, animi dolores magni vitae. Doloremque
-              deleniti placeat optio nemo qui esse ea, animi debitis tempora
-              exercitationem nam tempore blanditiis error facere laboriosam
-              delectus, libero minima veniam quibusdam suscipit harum! Maxime
-              unde inventore, fuga voluptatibus modi eveniet velit animi quam et
-              id culpa impedit similique. Deleniti mollitia vitae earum placeat
-              dolorum repudiandae consectetur itaque laudantium at, aperiam,
-              nulla quos eligendi assumenda necessitatibus recusandae provident
-              asperiores!
-           
+        UIについての解説？<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            explicabo ipsam, impedit vitae error minima cupiditate iusto,
+            accusamus doloribus vero culpa quibusdam. Distinctio cupiditate
+            doloribus autem adipisci nostrum ex error, quidem impedit omnis
+            labore, hic reiciendis, perferendis nulla nemo dignissimos laborum
+            saepe numquam voluptas esse. Perspiciatis corporis eos ipsum? Culpa
+            ea voluptates eveniet ullam recusandae iste, explicabo architecto
+            beatae ab facilis est atque in blanditiis rerum deserunt quisquam ad
+            animi nisi corporis? Culpa necessitatibus magnam officiis. Beatae
+            tenetur ex, consequuntur, alias tempore dolores quasi harum ad
+            cupiditate reiciendis hic? In accusantium blanditiis alias nesciunt,
+            quod ducimus. Incidunt fuga libero nisi voluptatibus quibusdam omnis
+            quod, mollitia eius iure, similique architecto laudantium quos,
+            praesentium inventore assumenda odio minus deserunt sit aliquid.
+            Quis rerum facilis sequi velit quos odit numquam fuga ad iste,
+            reiciendis, accusantium expedita recusandae vero vel repellat amet
+            nesciunt officiis, possimus molestias fugiat at. Velit, voluptatibus
+            quae sed tempore amet in. Dolor omnis sunt enim, earum magnam
+            voluptates similique alias officia? Nostrum, iste dolores! Deserunt
+            dolorem molestiae cum alias animi nesciunt sint, nulla odit ratione
+            pariatur? Deserunt ea accusamus ex aperiam eum quibusdam aut dolor
+            dolorum deleniti debitis odit, maiores quam esse omnis modi
+            architecto dicta repudiandae necessitatibus molestiae sunt quae quis
+            temporibus quos a? Deserunt tempora ipsam aut non eveniet asperiores
+            quis pariatur. Optio quibusdam voluptas, perferendis exercitationem
+            corporis iusto eius voluptatum omnis consequatur, incidunt, suscipit
+            quo libero rem laborum iure neque error aliquid pariatur nihil
+            minima hic tempore quidem? Tempore, quam distinctio repudiandae
+            magnam dignissimos sit deleniti! Veritatis provident, assumenda
+            beatae rerum asperiores maiores libero laudantium sunt officiis
+            voluptatem in similique ducimus debitis id earum recusandae cumque
+            illo natus numquam. Assumenda minus itaque officiis veniam laborum
+            atque odit repellendus eligendi mollitia perspiciatis id quo
+            tempora, delectus modi et odio voluptatibus alias! Dolorum minima
+            ducimus quis autem porro quibusdam iste inventore accusantium
+            incidunt excepturi aspernatur pariatur, laboriosam non aliquam vel
+            cum illum magni! Corrupti totam rem suscipit eius ut quod, similique
+            repellendus ex cupiditate? Doloremque ea ullam repudiandae, quaerat
+            ipsum consequatur? Itaque ea sapiente adipisci, animi dolores magni
+            vitae. Doloremque deleniti placeat optio nemo qui esse ea, animi
+            debitis tempora exercitationem nam tempore blanditiis error facere
+            laboriosam delectus, libero minima veniam quibusdam suscipit harum!
+            Maxime unde inventore, fuga voluptatibus modi eveniet velit animi
+            quam et id culpa impedit similique. Deleniti mollitia vitae earum
+            placeat dolorum repudiandae consectetur itaque laudantium at,
+            aperiam, nulla quos eligendi assumenda necessitatibus recusandae
+            provident asperiores!
           </div>
           <div id="input-agree" style="margin: 1rem">
-            <label id="agree-checkbox-label" for="agree" >同意しない</label>            
-            <input checked disabled type="checkbox" name="agree" id="not-agree-check"  style="border: #e3e3e3 1px solid;" />
-            <p class="info" id="agree-checkbox-info" style="display: none;">同意してください</p>
+            <label id="agree-checkbox-label" for="agree">同意しない</label>
+            <input
+              checked
+              disabled
+              type="checkbox"
+              name="agree"
+              id="not-agree-check"
+              style="border: #e3e3e3 1px solid"
+            />
+            <p class="info" id="agree-checkbox-info" style="display: none">
+              同意してください
+            </p>
           </div>
         </section>
       </div>
       <div class="page" id="page-4">
         <div id="over-success">
-            <img src="./asset/img/success.png" alt="">
-            <p>申し込みが完了しました!</p>
-        </div>
-       
-        <div id="over-dialog-box">
+          <img src="./asset/img/success.png" alt="" />
+          <p>  難しい手続き達成！<br />おめでとう！</p>
+          
+              <!-- <div id="over-dialog-box">
             <div class="over-content">
-                <p>難しい手続き達成<br />おめでとう！<br />WS無料招待券差し上げます!</p>    
-            </div>
-                  
+              <p>
+              
+              </p>
+            </div> -->
+          </div>
+
+          <div>解説ページ</div>
+          <div>解説コンテンツ</div>
         </div>
-        <img id="ticket-img" src="./asset/img/ticket_green.png" alt="">
+
+      
+        <!-- <img id="ticket-img" src="./asset/img/ticket_green.png" alt="" /> -->
       </div>
 
       <div id="nav-btn-container">
         <div id="btn-page0" class="nav-btn">
-            <!-- <button data-target-page-id="0">楽しみですね</button> -->
-          </div>
+          <!-- <button data-target-page-id="0">楽しみですね</button> -->
+        </div>
 
         <div id="btn-page1" class="nav-btn">
           <button data-target-page-id="0">リセット</button>
-          <button id="week-modal-open-btn" class="btn-next" data-target-page-id="1">確認</button>
+          <button
+            id="week-modal-open-btn"
+            class="btn-next"
+            data-target-page-id="1"
+          >
+            確認
+          </button>
           <button class="btn-next" data-target-page-id="2">次へ</button>
         </div>
+
+
         <div id="btn-page2" class="nav-btn">
           <button class="btn-next" data-target-page-id="3">次へ</button>
           <button data-target-page-id="1">戻る</button>
         </div>
+
+
         <div id="btn-page3" class="nav-btn">
           <!-- <button class="btn-next" data-target-page-id="4">次へ</button> -->
-          <button id="confirm-btn"  data-target-page-id="3" onclick="btnClickFn()">次へ</button>
+          <button  id="page-3-arrow-btn"  data-target-page-id="3"    onclick="btnClickFn()"
+          >
+           >>
+          </button>
 
-          <button data-target-page-id="2">戻る</button>
+          <button  id="confirm-btn" data-target-page-id="4"  > 確認する </button>
+
+          <button data-target-page-id="2" onclick="page3_backBtn()">戻る</button>
         </div>
         <div id="btn-page4" class="nav-btn">
           <button data-target-page-id="0">リセット</button>
         </div>
       </div>
 
-      <!-- <div id="nav-dots">
-        <div class="nav-dot" id="dot-1"></div>
-        <div class="nav-dot" id="dot-2"></div>
-        <div class="nav-dot" id="dot-3"></div>
-        <div class="nav-dot" id="dot-4"></div>
+
+      <div class="modal" id="page-3-confirm-dialog" style="display:none; ">
+        <div class="modal-content">
+          <img id="attention-img" src="./asset/img/attention.png" alt="" srcset="">
+          <p>本当に入力内容を確認しますか？</p>
+          <ul>
+            <button class="dialog-btn" id="btn-cancel">Cancel</button>
+            <button class="dialog-btn" id="btn-accept">Accept</button>
+            <button class="dialog-btn" id="btn-ok">OK</button>
+          </ul>             
+
+
+        </div>
+      </div>
+
+ 
+      <!-- <div id="bg-dots">
+        <div class="bg-dot dot-active" id="dot-1" data-color="#4d4d51"></div>
+        <div class="bg-dot" id="dot-2" data-color="#fc3636"></div>
+        <div class="bg-dot" id="dot-3" data-color="#1edc62"></div>
+        <div class="bg-dot" id="dot-4" data-color="#f7ba38"></div>
       </div> -->
 
-      <div id="bg-dots">
-        <div class="bg-dot dot-active" id="dot-1" data-color="#4d4d51"></div>
-        <div class="bg-dot" id="dot-2"  data-color="#fc3636"></div>
-        <div class="bg-dot" id="dot-3" data-color="#1edc62"> </div>
-        <div class="bg-dot" id="dot-4" data-color="#f7ba38"></div>
-      </div>
+
+
     </div>
     <footer>
-        <div>© 2023 認知症世界一周ツアー</div>
-        <!-- <div><img src="./asset/img/button_top.svg" alt="" srcset=""></div> -->
-        
+      <div>© 2023 認知症世界一周ツアー</div>
+      <!-- <div><img src="./asset/img/button_top.svg" alt="" srcset=""></div> -->
     </footer>
   </body>
   <script src="./asset/js/sketch.js"></script>
